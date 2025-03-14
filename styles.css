@@ -2093,31 +2093,39 @@ body {
     position: relative;
     z-index: 2;
     height: 100%;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
 }
 
 .cta-card.dark .cta-content h2 {
-    font-size: 64px;
+    font-size: 50px;
     font-weight: 600;
     line-height: 1.2;
-    align-self: flex-start;
+    margin-bottom: 40px;
+}
+
+.cta-card.dark .cta-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .cta-card.dark .cta-content p {
-    font-size: 24px;
+    font-size: 15px;
     line-height: 1.6;
     opacity: 0.9;
-    align-self: flex-end;
-    max-width: 70%;
+    max-width: 60%;
 }
 
 .cta-card.dark .cta-content .cta-button {
-    justify-self: flex-end;
-    align-self: flex-end;
     padding: 16px 32px;
     font-size: 18px;
+    background-color: #00A854;
+    color: white;
+    border-radius: 9999px;
 }
 
 .cta-card.green {
