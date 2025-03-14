@@ -7,14 +7,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Announcement Banner -->
-    <div class="announcement-banner">
-        <div class="container">
-            <p>🎉 New: FROG SMS now supports WhatsApp Business API integration!</p>
-            <button class="close-banner">&times;</button>
-        </div>
-    </div>
-
     <!-- Header -->
     <header class="header">
         <nav class="nav-container">
@@ -112,14 +104,6 @@
         <div class="container">
             <h1>Simple, transparent pricing</h1>
             <p class="pricing-subtitle">Choose the plan that's right for your business</p>
-            <div class="pricing-toggle">
-                <span class="toggle-label active">Monthly</span>
-                <label class="switch">
-                    <input type="checkbox" id="billing-toggle">
-                    <span class="slider"></span>
-                </label>
-                <span class="toggle-label">Annual (Save 20%)</span>
-            </div>
         </div>
     </section>
 
@@ -208,31 +192,6 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="pricing-faq">
-        <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3>What are SMS credits?</h3>
-                    <p>SMS credits are the number of text messages you can send each month. One credit equals one standard SMS message (160 characters). Longer messages may use multiple credits.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Can I upgrade or downgrade my plan?</h3>
-                    <p>Yes, you can change your plan at any time. When upgrading, you'll be prorated for the remainder of the billing cycle. When downgrading, changes take effect at the start of the next billing cycle.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Do unused credits roll over?</h3>
-                    <p>No, SMS credits reset at the beginning of each billing cycle. However, you can purchase additional credits if you need more during your current cycle.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>What kind of support do you offer?</h3>
-                    <p>We offer email support for all plans, with priority support and dedicated account managers for Professional and Enterprise plans. Enterprise customers also receive 24/7 support coverage.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -302,29 +261,16 @@
     </button>
 
     <script>
-        // Billing toggle functionality
-        const billingToggle = document.getElementById('billing-toggle');
-        const toggleLabels = document.querySelectorAll('.toggle-label');
-        const amounts = document.querySelectorAll('.amount');
-        const monthlyPrices = ['29', '99', '299'];
-        const annualPrices = ['23', '79', '239'];
+        // Header scroll effect
+        const header = document.querySelector('.header');
 
-        billingToggle.addEventListener('change', function() {
-            toggleLabels.forEach(label => label.classList.toggle('active'));
-            amounts.forEach((amount, index) => {
-                amount.textContent = this.checked ? annualPrices[index] : monthlyPrices[index];
-            });
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 0) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         });
-
-        // Announcement banner close functionality
-        const announcementBanner = document.querySelector('.announcement-banner');
-        const closeBanner = document.querySelector('.close-banner');
-
-        if (closeBanner && announcementBanner) {
-            closeBanner.addEventListener('click', () => {
-                announcementBanner.style.display = 'none';
-            });
-        }
 
         // Go to top button functionality
         const goToTopButton = document.querySelector('.go-to-top');
@@ -342,17 +288,6 @@
                 top: 0,
                 behavior: 'smooth'
             });
-        });
-
-        // Header scroll effect
-        const header = document.querySelector('.header');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 0) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
         });
     </script>
 </body>
