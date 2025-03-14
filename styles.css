@@ -909,9 +909,14 @@ body {
     background-color: #008c44;
 }
 
-.go-to-top-icon {
+.go-to-top svg {
     width: 24px;
     height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.go-to-top:hover svg {
+    transform: translateY(-2px);
 }
 
 /* Mobile Menu Styles */
