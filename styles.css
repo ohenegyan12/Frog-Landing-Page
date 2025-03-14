@@ -2396,15 +2396,43 @@ input:checked + .slider:before {
     margin-bottom: 32px;
 }
 
+.card-features h4 {
+    font-size: 18px;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+    margin-top: 32px;
+}
+
+.card-features h4:first-child {
+    margin-top: 0;
+}
+
 .card-features ul {
     list-style: none;
     padding: 0;
+    margin-bottom: 32px;
+}
+
+.card-features ul:last-child {
+    margin-bottom: 0;
 }
 
 .card-features li {
-    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
     color: #666;
-    font-size: 15px;
+}
+
+.card-features li:last-child {
+    margin-bottom: 0;
+}
+
+.check-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
 }
 
 .pricing-cta {
