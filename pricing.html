@@ -6,22 +6,290 @@
     <title>Pricing - FROG SMS</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        :root {
+            --primary: #00A854;
+            --primary-dark: #008043;
+            --primary-light: rgba(0, 168, 84, 0.1);
+            --text-primary: #111827;
+            --text-secondary: #4B5563;
+            --background: #FFFFFF;
+            --surface: #F9FAFB;
+            --border: #E5E7EB;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Base Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--background);
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation Styles */
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            padding: 0 24px;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        /* Burger Menu */
+        .burger-menu {
+            display: none;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+        }
+
+        .burger-menu span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            margin: 5px 0;
+            background: var(--text-primary);
+            transition: transform 0.3s ease;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: white;
+            padding: 24px;
+            z-index: 100;
+            overflow-y: auto;
+        }
+
+        .mobile-menu .nav-links {
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .mobile-menu .nav-link {
+            font-size: 18px;
+            padding: 8px 0;
+            width: 100%;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mobile-menu .dropdown-menu {
+            position: static;
+            opacity: 1;
+            visibility: visible;
+            transform: none;
+            box-shadow: none;
+            padding: 16px;
+            margin-top: 12px;
+            background: var(--surface);
+            display: none;
+            border-radius: 8px;
+        }
+
+        .mobile-menu .dropdown-item {
+            padding: 12px;
+            margin-bottom: 4px;
+        }
+
+        .mobile-menu .dropdown-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .mobile-menu .dropdown.active .dropdown-menu {
+            display: block;
+        }
+
+        .mobile-menu .nav-buttons {
+            margin-top: 32px;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .mobile-menu .login-btn,
+        .mobile-menu .try-free-btn {
+            width: 100%;
+            text-align: center;
+            padding: 16px;
+            font-size: 16px;
+            border-radius: 8px;
+        }
+
+        .mobile-menu .login-btn {
+            border: 1px solid var(--border);
+            background: white;
+        }
+
+        .mobile-menu .try-free-btn {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Menu Overlay */
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 90;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+
+        .menu-overlay.active {
+            display: block;
+        }
+
+        /* Burger Menu Animation */
+        .burger-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .burger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .burger-menu span {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        /* Pricing Styles */
+        .pricing-hero {
+            padding: 80px 0;
+            text-align: center;
+            background: var(--surface);
+        }
+
+        .pricing-hero h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .pricing-subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1200px;
+            margin: 64px auto;
+            padding: 0 24px;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            border: 1px solid var(--border);
+            position: relative;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 16px;
+            }
+
+            .nav-links:not(.mobile-menu .nav-links), 
+            .nav-buttons:not(.mobile-menu .nav-buttons) {
+                display: none;
+            }
+
+            .burger-menu {
+                display: block;
+            }
+
+            .mobile-menu.active {
+                display: block;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                padding: 0 16px;
+                margin: 32px auto;
+            }
+
+            .pricing-hero {
+                padding: 48px 0;
+            }
+
+            .pricing-hero h1 {
+                font-size: 36px;
+            }
+
+            .pricing-subtitle {
+                font-size: 18px;
+            }
+
+            .pricing-card {
+                padding: 24px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .footer-bottom-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
         .pricing-card.popular {
-            border: 2px solid #00A854;
-            animation: float 3s ease-in-out infinite;
+            border: 2px solid var(--primary);
             box-shadow: 0 8px 32px rgba(0, 168, 84, 0.15);
         }
 
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
         }
 
         .pricing-card.popular:hover {
@@ -40,6 +308,12 @@
                 </a>
             </div>
             
+            <button class="burger-menu" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <!-- Desktop Navigation -->
             <div class="nav-links">
                 <div class="dropdown">
@@ -82,39 +356,47 @@
                 <a href="https://frog.wigal.com.gh/register/validate-email" class="try-free-btn">Try FROG For Free</a>
             </div>
 
-            <!-- Burger Menu Button -->
-            <div class="burger-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
             <!-- Mobile Menu -->
             <div class="mobile-menu">
                 <div class="nav-links">
                     <div class="dropdown">
                         <button class="nav-link">Services <span class="dropdown-arrow">▼</span></button>
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">Bulk SMS</a>
-                            <a href="#" class="dropdown-item">Voice SMS</a>
-                            <a href="#" class="dropdown-item">IVR Messaging</a>
+                            <a href="services.html" class="dropdown-item">
+                                <img src="Assets/message-sms 1.svg" alt="Bulk SMS icon" class="dropdown-icon">
+                                <span>Bulk SMS</span>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <img src="Assets/voice.svg" alt="Voice SMS icon" class="dropdown-icon">
+                                <span>Voice SMS</span>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <img src="Assets/ussd.svg" alt="IVR Messaging icon" class="dropdown-icon">
+                                <span>IVR Messaging</span>
+                            </a>
                         </div>
                     </div>
-                    <a href="#" class="nav-link">Pricing</a>
-                    <a href="#" class="nav-link">Documentation</a>
+                    <a href="pricing.html" class="nav-link active">Pricing</a>
+                    <a href="https://frogdocs.wigal.com.gh/" class="nav-link">Documentation</a>
                     <div class="dropdown">
                         <button class="nav-link">Resources <span class="dropdown-arrow">▼</span></button>
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">FAQs</a>
-                            <a href="#" class="dropdown-item">Guides</a>
+                            <a href="#" class="dropdown-item">
+                                <img src="Assets/faqs.svg" alt="FAQs icon" class="dropdown-icon">
+                                <span>FAQs</span>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <img src="Assets/guide.svg" alt="Guides icon" class="dropdown-icon">
+                                <span>Guides</span>
+                            </a>
                         </div>
                     </div>
-                    <a href="#" class="nav-link">Company</a>
+                    <a href="https://wigal.com.gh/" class="nav-link">Company</a>
                 </div>
 
                 <div class="nav-buttons">
-                    <a href="#" class="login-btn">Login</a>
-                    <a href="#" class="try-free-btn">Try FROG For Free</a>
+                    <a href="https://frog.wigal.com.gh/login" class="login-btn">Login</a>
+                    <a href="https://frog.wigal.com.gh/register/validate-email" class="try-free-btn">Try FROG For Free</a>
                 </div>
             </div>
 
@@ -288,12 +570,60 @@
     <script>
         // Header scroll effect
         const header = document.querySelector('.header');
-
         window.addEventListener('scroll', () => {
             if (window.scrollY > 0) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu functionality
+        const burgerMenu = document.querySelector('.burger-menu');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        const dropdowns = document.querySelectorAll('.mobile-menu .dropdown');
+
+        burgerMenu.addEventListener('click', () => {
+            burgerMenu.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Handle dropdown toggles on mobile
+        dropdowns.forEach(dropdown => {
+            const button = dropdown.querySelector('.nav-link');
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+                
+                // Close other dropdowns
+                dropdowns.forEach(other => {
+                    if (other !== dropdown) {
+                        other.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Close mobile menu when clicking overlay
+        menuOverlay.addEventListener('click', () => {
+            burgerMenu.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                burgerMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+                dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
             }
         });
 

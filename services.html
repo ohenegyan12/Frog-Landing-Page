@@ -188,17 +188,489 @@
                 font-size: 18px;
             }
         }
+
+        /* Navigation Styles */
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        /* Burger Menu */
+        .burger-menu {
+            display: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .burger-menu span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            margin: 5px 0;
+            background: var(--text-primary);
+            transition: transform 0.3s ease;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: white;
+            padding: 24px;
+            z-index: 100;
+            overflow-y: auto;
+        }
+
+        .mobile-menu .nav-links {
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .mobile-menu .nav-link {
+            font-size: 18px;
+            padding: 8px 0;
+            width: 100%;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mobile-menu .dropdown-menu {
+            position: static;
+            opacity: 1;
+            visibility: visible;
+            transform: none;
+            box-shadow: none;
+            padding: 16px;
+            margin-top: 12px;
+            background: var(--surface);
+            display: none;
+            border-radius: 8px;
+        }
+
+        .mobile-menu .dropdown-item {
+            padding: 12px;
+            margin-bottom: 4px;
+        }
+
+        .mobile-menu .dropdown-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .mobile-menu .dropdown.active .dropdown-menu {
+            display: block;
+        }
+
+        .mobile-menu .nav-buttons {
+            margin-top: 32px;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .mobile-menu .login-btn,
+        .mobile-menu .try-free-btn {
+            width: 100%;
+            text-align: center;
+            padding: 16px;
+            font-size: 16px;
+            border-radius: 8px;
+        }
+
+        .mobile-menu .login-btn {
+            border: 1px solid var(--border);
+            background: white;
+        }
+
+        .mobile-menu .try-free-btn {
+            background: var(--primary);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 16px;
+            }
+
+            .nav-links:not(.mobile-menu .nav-links), 
+            .nav-buttons:not(.mobile-menu .nav-buttons) {
+                display: none;
+            }
+
+            .burger-menu {
+                display: block;
+                margin-left: 16px;
+            }
+
+            .mobile-menu.active {
+                display: block;
+            }
+
+            .mobile-menu .dropdown-icon {
+                width: 24px;
+                height: 24px;
+            }
+
+            .mobile-menu .dropdown-arrow {
+                transition: transform 0.3s ease;
+            }
+
+            .mobile-menu .dropdown.active .dropdown-arrow {
+                transform: rotate(180deg);
+            }
+
+            .logo img {
+                height: 32px;
+            }
+        }
+
+        /* Desktop Navigation */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-left: 32px;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.2s ease;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-arrow {
+            font-size: 12px;
+            margin-left: 4px;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border-radius: 8px;
+            padding: 8px 16px;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            gap: 12px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            border-radius: 6px;
+        }
+
+        .dropdown-item:hover {
+            color: var(--primary);
+        }
+
+        .dropdown-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .login-btn {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .try-free-btn {
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .try-free-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: var(--surface);
+            padding: 80px 0 40px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 64px;
+            margin-bottom: 64px;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            margin: 24px 0;
+            max-width: 320px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-light);
+        }
+
+        .footer-links {
+            margin-bottom: 24px;
+        }
+
+        .footer-links h3 {
+            font-size: 18px;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .footer-links a {
+            display: block;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: color 0.2s ease;
+            border: none;
+            background: none;
+            padding: 0;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .iso-badges {
+            margin-top: 16px;
+        }
+
+        .iso-badges img {
+            height: 60px;
+            width: auto;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-bottom-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Menu Overlay */
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 90;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+
+        .menu-overlay.active {
+            display: block;
+        }
+
+        /* Burger Menu Animation */
+        .burger-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .burger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .burger-menu span {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <nav class="container">
+        <nav class="nav-container container">
             <div class="logo">
                 <a href="/">
                     <img src="Assets/frog.logo.png" alt="FROG Logo" height="40">
                 </a>
             </div>
+            
+            <button class="burger-menu" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Desktop Navigation -->
+            <div class="nav-links">
+                <div class="dropdown">
+                    <button class="nav-link active">Services <span class="dropdown-arrow">▼</span></button>
+                    <div class="dropdown-menu">
+                        <a href="#bulk-sms" class="dropdown-item">
+                            <img src="Assets/message-sms 1.svg" alt="Bulk SMS icon" class="dropdown-icon">
+                            <span>Bulk SMS</span>
+                        </a>
+                        <a href="#voice-sms" class="dropdown-item">
+                            <img src="Assets/voice.svg" alt="Voice SMS icon" class="dropdown-icon">
+                            <span>Voice SMS</span>
+                        </a>
+                        <a href="#ivr" class="dropdown-item">
+                            <img src="Assets/ussd.svg" alt="IVR Messaging icon" class="dropdown-icon">
+                            <span>IVR Messaging</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="https://frogdocs.wigal.com.gh/" class="nav-link">Documentation</a>
+                <div class="dropdown">
+                    <button class="nav-link">Resources <span class="dropdown-arrow">▼</span></button>
+                    <div class="dropdown-menu">
+                        <a href="faq.html" class="dropdown-item">
+                            <img src="Assets/faqs.svg" alt="FAQs icon" class="dropdown-icon">
+                            <span>FAQs</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <img src="Assets/guide.svg" alt="Guides icon" class="dropdown-icon">
+                            <span>Guides</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="https://wigal.com.gh/" class="nav-link">Company</a>
+            </div>
+
+            <div class="nav-buttons">
+                <a href="https://frog.wigal.com.gh/login" class="login-btn">Login</a>
+                <a href="https://frog.wigal.com.gh/register/validate-email" class="try-free-btn">Try FROG For Free</a>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu">
+                <div class="nav-links">
+                    <div class="dropdown">
+                        <button class="nav-link active">Services <span class="dropdown-arrow">▼</span></button>
+                        <div class="dropdown-menu">
+                            <a href="#bulk-sms" class="dropdown-item">
+                                <img src="Assets/message-sms 1.svg" alt="Bulk SMS icon" class="dropdown-icon">
+                                <span>Bulk SMS</span>
+                            </a>
+                            <a href="#voice-sms" class="dropdown-item">
+                                <img src="Assets/voice.svg" alt="Voice SMS icon" class="dropdown-icon">
+                                <span>Voice SMS</span>
+                            </a>
+                            <a href="#ivr" class="dropdown-item">
+                                <img src="Assets/ussd.svg" alt="IVR Messaging icon" class="dropdown-icon">
+                                <span>IVR Messaging</span>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="pricing.html" class="nav-link">Pricing</a>
+                    <a href="https://frogdocs.wigal.com.gh/" class="nav-link">Documentation</a>
+                    <div class="dropdown">
+                        <button class="nav-link">Resources <span class="dropdown-arrow">▼</span></button>
+                        <div class="dropdown-menu">
+                            <a href="faq.html" class="dropdown-item">
+                                <img src="Assets/faqs.svg" alt="FAQs icon" class="dropdown-icon">
+                                <span>FAQs</span>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <img src="Assets/guide.svg" alt="Guides icon" class="dropdown-icon">
+                                <span>Guides</span>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="https://wigal.com.gh/" class="nav-link">Company</a>
+                </div>
+
+                <div class="nav-buttons">
+                    <a href="https://frog.wigal.com.gh/login" class="login-btn">Login</a>
+                    <a href="https://frog.wigal.com.gh/register/validate-email" class="try-free-btn">Try FROG For Free</a>
+                </div>
+            </div>
+
+            <!-- Overlay -->
+            <div class="menu-overlay"></div>
         </nav>
     </header>
 
@@ -316,23 +788,131 @@
                 <div class="cta-content">
                     <h2>Ready to transform your communication?</h2>
                     <p>Join thousands of businesses that trust FROG SMS for their messaging needs.</p>
-                    <a href="pricing.html" class="button button-white">Get Started</a>
+                    <a href="https://frog.wigal.com.gh/dashboard" class="button button-white">Get Started</a>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="/">
                         <img src="Assets/frog.logo.png" alt="FROG Logo" height="40">
                     </a>
+                    <p>Providing the lowest and unbeatable Bulk Messaging prices in Ghana.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/wigalgh/" class="social-link" aria-label="LinkedIn">
+                            <img src="Assets/linkedin.svg" alt="LinkedIn">
+                        </a>
+                        <a href="https://www.instagram.com/wigalgh?igsh=MWQ4Z3dqZjZ2a2swOQ==" class="social-link" aria-label="Instagram">
+                            <img src="Assets/instagram.svg" alt="Instagram">
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <img src="Assets/twitter.svg" alt="Twitter">
+                        </a>
+                        <a href="https://www.facebook.com/share/1BUEFnG7oX/?mibextid=wwXIfr" class="social-link" aria-label="Facebook">
+                            <img src="Assets/facebook.svg" alt="Facebook">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Products</h3>
+                    <a href="#bulk-sms">Bulk SMS</a>
+                    <a href="#voice-sms">Voice SMS</a>
+                    <a href="#ivr">IVR Messaging</a>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Pricing</h3>
+                    <a href="pricing.html">Pricing <span class="new-badge">New</span></a>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Documentation</h3>
+                    <a href="https://frogdocs.wigal.com.gh/">FROG API</a>
+                    <div class="iso-badges">
+                        <img src="Assets/ISO-IEC-27001-2022(1).png" alt="ISO 27001 Certification" style="height: 60px; width: auto;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Legal Notice</a>
+                    <a href="#">Information Notice</a>
+                </div>
+                <div class="copyright">
+                    © 2025 - FROG SMS. All rights reserved.
                 </div>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Header scroll effect
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 0) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu functionality
+        const burgerMenu = document.querySelector('.burger-menu');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        const dropdowns = document.querySelectorAll('.mobile-menu .dropdown');
+
+        burgerMenu.addEventListener('click', () => {
+            burgerMenu.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Handle dropdown toggles on mobile
+        dropdowns.forEach(dropdown => {
+            const button = dropdown.querySelector('.nav-link');
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+                
+                // Close other dropdowns
+                dropdowns.forEach(other => {
+                    if (other !== dropdown) {
+                        other.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Close mobile menu when clicking overlay
+        menuOverlay.addEventListener('click', () => {
+            burgerMenu.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                burgerMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+                dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+            }
+        });
+    </script>
 </body>
 </html> 
