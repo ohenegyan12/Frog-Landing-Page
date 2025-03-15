@@ -41,7 +41,7 @@
                 <div class="dropdown">
                     <button class="nav-link">Resources <span class="dropdown-arrow">▼</span></button>
                     <div class="dropdown-menu">
-                        <a href="#" class="dropdown-item">
+                        <a href="faq.html" class="dropdown-item">
                             <img src="Assets/faqs.svg" alt="FAQs icon" class="dropdown-icon">
                             <span>FAQs</span>
                         </a>
@@ -147,9 +147,9 @@
                 <h2>Contact Us</h2>
                 <p>If you have any questions about this Privacy Policy, please contact us:</p>
                 <ul>
-                    <li>By email: support@wigal.com.gh</li>
-                    <li>By visiting our website: https://wigal.com.gh</li>
-                    <li>By phone: +233 553019529</li>
+                    <li>By email: <a href="mailto:support@wigal.com.gh" class="contact-link">support@wigal.com.gh</a></li>
+                    <li>By visiting our website: <a href="https://wigal.com.gh" target="_blank" rel="noopener noreferrer" class="contact-link">https://wigal.com.gh</a></li>
+                    <li>By phone: <a href="tel:+233553019529" class="contact-link">+233 553019529</a></li>
                 </ul>
             </section>
         </div>
@@ -222,6 +222,17 @@
             .policy-section h2 {
                 font-size: 1.5rem;
             }
+        }
+
+        .contact-link {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact-link:hover {
+            color: #0056b3;
+            text-decoration: underline;
         }
     </style>
 </body>

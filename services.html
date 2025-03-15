@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - FROG SMS</title>
+    <style>
+        :root {
+            --primary: #00A854;
+            --primary-dark: #008043;
+            --primary-light: rgba(0, 168, 84, 0.1);
+            --text-primary: #111827;
+            --text-secondary: #4B5563;
+            --background: #FFFFFF;
+            --surface: #F9FAFB;
+            --border: #E5E7EB;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--background);
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header Styles */
+        .header {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: var(--surface);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.1;
+            color: var(--text-primary);
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin-bottom: 48px;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            transition: transform 0.2s ease;
+            border: 1px solid var(--border);
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 24px;
+            color: var(--primary);
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+        }
+
+        .feature-item svg {
+            width: 20px;
+            height: 20px;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 24px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .button-white {
+            background: white;
+            color: var(--primary);
+        }
+
+        .button-white:hover {
+            background: var(--surface);
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="container">
+            <div class="logo">
+                <a href="/">
+                    <img src="Assets/frog.logo.png" alt="FROG Logo" height="40">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Enterprise Messaging Solutions</h1>
+                    <p>Power your business communication with our comprehensive suite of messaging services, trusted by thousands of companies worldwide.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services">
+            <div class="container">
+                <div class="services-grid">
+                    <!-- Bulk SMS -->
+                    <div class="service-card">
+                        <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M7 9L12 12.5L17 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h3>Bulk SMS</h3>
+                        <p>Send thousands of messages instantly with our optimized delivery system.</p>
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <svg viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                </svg>
+                                <span>98% Delivery success rate</span>
+                            </li>
+                            <li class="feature-item">
+                                <svg viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                </svg>
+                                <span>Real-time tracking</span>
+                            </li>
+                            <li class="feature-item">
+                                <svg viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                </svg>
+                                <span>Customizable templates</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Voice SMS -->
+                    <div class="service-card">
+                        <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 4V20M8 8V16M16 8V16M4 12H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <h3>Voice SMS</h3>
+                        <p>Transform text into natural-sounding voice messages in multiple languages.</p>
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <svg viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                </svg>
+                                <span>Natural voice synthesis</span>
+                            </li>
+                            <li class="feature-item">
+                                <svg viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                </svg>
+                                <span>Multiple language support</span>
+                            </li>
+                            <li class="feature-item">
+                                <svg viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                </svg>
+                                <span>Custom voice options</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- IVR Messaging -->
+                    <div class="service-card">
+                        <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4H20V16H4V4Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 16V20M8 20H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <h3>IVR Messaging</h3>
+                        <p>Create interactive voice response systems for automated customer interactions.</p>
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <svg viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                </svg>
+                                <span>Visual flow builder</span>
+                            </li>
+                            <li class="feature-item">
+                                <svg viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                </svg>
+                                <span>Call recording</span>
+                            </li>
+                            <li class="feature-item">
+                                <svg viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                </svg>
+                                <span>Real-time analytics</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to transform your communication?</h2>
+                    <p>Join thousands of businesses that trust FROG SMS for their messaging needs.</p>
+                    <a href="pricing.html" class="button button-white">Get Started</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/">
+                        <img src="Assets/frog.logo.png" alt="FROG Logo" height="40">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

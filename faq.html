@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frequently Asked Questions about FROG's SMS services">
+    <link rel="stylesheet" href="styles.css">
+    <title>FAQs - FROG</title>
+</head>
+<body>
+    <!-- Header/Navigation Section -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="/">
+                    <img src="Assets/frog.logo.png" alt="FROG Logo">
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="nav-links">
+                <div class="dropdown">
+                    <button class="nav-link">Services <span class="dropdown-arrow">▼</span></button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">
+                            <img src="Assets/message-sms 1.svg" alt="Bulk SMS icon" class="dropdown-icon">
+                            <span>Bulk SMS</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <img src="Assets/voice.svg" alt="Voice SMS icon" class="dropdown-icon">
+                            <span>Voice SMS</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <img src="Assets/ussd.svg" alt="IVR Messaging icon" class="dropdown-icon">
+                            <span>IVR Messaging</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="https://frogdocs.wigal.com.gh/" class="nav-link">Documentation</a>
+                <div class="dropdown">
+                    <button class="nav-link">Resources <span class="dropdown-arrow">▼</span></button>
+                    <div class="dropdown-menu">
+                        <a href="faq.html" class="dropdown-item">
+                            <img src="Assets/faqs.svg" alt="FAQs icon" class="dropdown-icon">
+                            <span>FAQs</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <img src="Assets/guide.svg" alt="Guides icon" class="dropdown-icon">
+                            <span>Guides</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="https://wigal.com.gh/" class="nav-link">Company</a>
+            </div>
+
+            <div class="nav-buttons">
+                <a href="https://frog.wigal.com.gh/login" class="login-btn">Login</a>
+                <a href="https://frog.wigal.com.gh/register/validate-email" class="try-free-btn">Try FROG For Free</a>
+            </div>
+
+            <!-- Burger Menu Button -->
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="faq-container">
+        <div class="container">
+            <h1>Frequently Asked Questions and Guides</h1>
+            <p class="faq-intro">
+                Below we have provided frequently asked questions about FROG, its integration and a few others. If you have any other questions, please get in touch by 
+                <a href="https://api.whatsapp.com/send?phone=233553019529" class="contact-link">talking to an expert!</a>
+            </p>
+
+            <div class="faq-categories">
+                <button class="category-btn active" data-category="messaging">Messaging</button>
+                <button class="category-btn" data-category="email">Email</button>
+                <button class="category-btn" data-category="contacts">Contacts</button>
+                <button class="category-btn" data-category="account">Account</button>
+            </div>
+
+            <section class="faq-section" id="messaging">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h2>How do I send personalized messages?</h2>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can personalize messages using custom fields in your contact list. This allows you to include individual recipient details like names, account numbers, or any other custom information in your messages.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h2>How to send a simple message?</h2>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To send a simple message:</p>
+                        <ol>
+                            <li>Log into your FROG account</li>
+                            <li>Click on "New Message"</li>
+                            <li>Enter the recipient's number or select from contacts</li>
+                            <li>Type your message</li>
+                            <li>Click "Send"</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h2>How to send bulk message to contacts from a file?</h2>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To send bulk messages from a file:</p>
+                        <ol>
+                            <li>Prepare your contact file (Excel/CSV)</li>
+                            <li>Go to the Bulk Message section</li>
+                            <li>Upload your contact file</li>
+                            <li>Map the columns to the required fields</li>
+                            <li>Compose your message</li>
+                            <li>Review and send</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h2>How do I send bulk message to groups?</h2>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To send messages to groups:</p>
+                        <ol>
+                            <li>Go to the Groups section</li>
+                            <li>Select the target group(s)</li>
+                            <li>Click "Send Message"</li>
+                            <li>Compose your message</li>
+                            <li>Review and send</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq-section" id="email">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h2>How to send a simple email message?</h2>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To send a simple email:</p>
+                        <ol>
+                            <li>Navigate to the Email section</li>
+                            <li>Click "New Email"</li>
+                            <li>Enter recipient email address</li>
+                            <li>Compose your email</li>
+                            <li>Send</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h2>Steps on how to send bulk email message to groups</h2>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For bulk email to groups:</p>
+                        <ol>
+                            <li>Select the Email Groups section</li>
+                            <li>Choose your target group(s)</li>
+                            <li>Click "Compose Email"</li>
+                            <li>Create your email content</li>
+                            <li>Review and send</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h2>How to send bulk email message to contacts from a file</h2>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To send bulk emails using a file:</p>
+                        <ol>
+                            <li>Prepare your email list file</li>
+                            <li>Go to Bulk Email section</li>
+                            <li>Upload your file</li>
+                            <li>Map the email column</li>
+                            <li>Compose your email</li>
+                            <li>Send</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq-section" id="contacts">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h2>Steps on how to upload contacts into a group</h2>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To upload contacts to a group:</p>
+                        <ol>
+                            <li>Go to Groups section</li>
+                            <li>Select or create a group</li>
+                            <li>Click "Import Contacts"</li>
+                            <li>Upload your contact file</li>
+                            <li>Map the columns</li>
+                            <li>Complete the import</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h2>How to delete Groups?</h2>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To delete groups:</p>
+                        <ol>
+                            <li>Navigate to Groups section</li>
+                            <li>Select the group(s) to delete</li>
+                            <li>Click the delete icon</li>
+                            <li>Confirm deletion</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h2>How to group unassigned contacts?</h2>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To group unassigned contacts:</p>
+                        <ol>
+                            <li>Go to Contacts section</li>
+                            <li>Filter for unassigned contacts</li>
+                            <li>Select contacts to group</li>
+                            <li>Click "Add to Group"</li>
+                            <li>Choose or create a group</li>
+                            <li>Confirm the assignment</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq-section" id="account">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h2>How to Add Funds?</h2>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To add funds to your account:</p>
+                        <ol>
+                            <li>Click on "Add Funds" or "Buy Credits"</li>
+                            <li>Select your preferred payment method</li>
+                            <li>Enter the amount you wish to add</li>
+                            <li>Complete the payment process</li>
+                            <li>Credits will be added automatically</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <div class="try-frog-section">
+                <h2>Want to start using FROG now?</h2>
+                <a href="https://frog.wigal.com.gh/register/validate-email" class="try-free-btn">Try FROG for Free</a>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        .faq-container {
+            padding: 80px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .faq-container .container {
+            padding: 0 20px;
+        }
+
+        .faq-container h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .faq-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 40px;
+        }
+
+        .faq-categories {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 10px 20px;
+            border: 2px solid #00A651;
+            border-radius: 25px;
+            background: transparent;
+            color: #00A651;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: #00A651;
+            color: white;
+        }
+
+        .faq-section {
+            display: none;
+        }
+
+        .faq-section.active {
+            display: block;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            background: #f9f9f9;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question h2 {
+            font-size: 1.2rem;
+            margin: 0;
+            color: #333;
+        }
+
+        .toggle-icon {
+            font-size: 1.5rem;
+            color: #00A651;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            margin: 0 0 15px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .faq-answer ul,
+        .faq-answer ol {
+            margin: 0 0 15px 20px;
+        }
+
+        .faq-answer li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        @media (max-width: 1200px) {
+            .faq-container {
+                padding: 60px 0;
+            }
+
+            .faq-container .container {
+                padding: 0 30px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .faq-container h1 {
+                font-size: 2.2rem;
+            }
+
+            .faq-intro {
+                font-size: 1rem;
+                padding: 0 20px;
+            }
+
+            .category-btn {
+                padding: 8px 18px;
+                font-size: 0.95rem;
+            }
+
+            .try-frog-section h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .faq-container {
+                padding: 40px 0;
+            }
+
+            .faq-container .container {
+                padding: 0 20px;
+            }
+
+            .faq-container h1 {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+            }
+
+            .faq-intro {
+                margin-bottom: 30px;
+            }
+
+            .faq-categories {
+                gap: 10px;
+                margin-bottom: 30px;
+            }
+
+            .category-btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+                min-width: calc(50% - 10px);
+                text-align: center;
+            }
+
+            .faq-question h2 {
+                font-size: 1.1rem;
+                padding-right: 15px;
+            }
+
+            .faq-answer {
+                font-size: 0.95rem;
+            }
+
+            .try-frog-section {
+                margin-top: 40px;
+                padding: 30px 20px;
+            }
+
+            .try-frog-section h2 {
+                font-size: 1.4rem;
+            }
+
+            .try-frog-section .try-free-btn {
+                padding: 12px 25px;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .faq-container h1 {
+                font-size: 1.6rem;
+            }
+
+            .faq-intro {
+                font-size: 0.95rem;
+                padding: 0 10px;
+            }
+
+            .faq-categories {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .category-btn {
+                width: 100%;
+                min-width: unset;
+                padding: 10px;
+            }
+
+            .faq-question {
+                padding: 15px;
+            }
+
+            .faq-question h2 {
+                font-size: 1rem;
+            }
+
+            .toggle-icon {
+                font-size: 1.2rem;
+            }
+
+            .faq-answer.active {
+                padding: 15px;
+            }
+
+            .faq-answer p, 
+            .faq-answer li {
+                font-size: 0.9rem;
+            }
+
+            .try-frog-section {
+                padding: 25px 15px;
+            }
+
+            .try-frog-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .try-frog-section .try-free-btn {
+                width: 100%;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .faq-container .container {
+                padding: 0 15px;
+            }
+
+            .faq-container h1 {
+                font-size: 1.4rem;
+            }
+
+            .faq-question h2 {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (hover: none) {
+            .category-btn,
+            .faq-question,
+            .try-free-btn {
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .category-btn:active,
+            .try-free-btn:active {
+                transform: scale(0.98);
+            }
+        }
+
+        .try-frog-section {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .try-frog-section h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .try-frog-section .try-free-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #00A651;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s ease;
+        }
+
+        .try-frog-section .try-free-btn:hover {
+            background: #008741;
+        }
+
+        .contact-link {
+            color: #00A651;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact-link:hover {
+            color: #008741;
+            text-decoration: underline;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show initial section
+            document.getElementById('messaging').style.display = 'block';
+
+            // Category buttons
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+
+                    // Hide all sections
+                    document.querySelectorAll('.faq-section').forEach(section => {
+                        section.style.display = 'none';
+                    });
+
+                    // Show selected section
+                    const categoryId = button.getAttribute('data-category');
+                    document.getElementById(categoryId).style.display = 'block';
+                });
+            });
+
+            // FAQ item toggle
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const icon = question.querySelector('.toggle-icon');
+
+                    // Toggle answer visibility
+                    answer.classList.toggle('active');
+                    
+                    // Toggle icon
+                    icon.textContent = answer.classList.contains('active') ? '−' : '+';
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

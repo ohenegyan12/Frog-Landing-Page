@@ -5,6 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing - FROG SMS</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .pricing-card.popular {
+            border: 2px solid #00A854;
+            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 8px 32px rgba(0, 168, 84, 0.15);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .pricing-card.popular:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 36px rgba(0, 168, 84, 0.25);
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -21,7 +45,7 @@
                 <div class="dropdown">
                     <button class="nav-link">Services <span class="dropdown-arrow">▼</span></button>
                     <div class="dropdown-menu">
-                        <a href="#" class="dropdown-item">
+                        <a href="services.html" class="dropdown-item">
                             <img src="Assets/message-sms 1.svg" alt="Bulk SMS icon" class="dropdown-icon">
                             <span>Bulk SMS</span>
                         </a>
@@ -114,7 +138,7 @@
             <div class="pricing-card">
                 <div class="card-header">
                     <h3>Basic Plan (₵)</h3>
-                    <p class="description">You company just needs a simple, efficient and auditable carbon assessment.</p>
+                    <p class="description">Your company just needs a simple, efficient and auditable carbon assessment.</p>
                 </div>
                 <div class="card-features">
                     <h4>VOICE SMS</h4>
@@ -169,7 +193,7 @@
             <div class="pricing-card">
                 <div class="card-header">
                     <h3>Premium Plan(₵)</h3>
-                    <p class="description">You company just needs a simple, efficient and auditable carbon assessment.</p>
+                    <p class="description">Your company just needs a simple, efficient and auditable carbon assessment.</p>
                 </div>
                 <div class="card-features">
                     <h4>VOICE SMS</h4>
@@ -231,10 +255,9 @@
 
                 <div class="footer-links">
                     <h3>Documentation</h3>
-                    <a href="#">FROG API</a>
+                    <a href="https://frogdocs.wigal.com.gh/">FROG API</a>
                     <div class="iso-badges">
                         <img src="Assets/ISO-IEC-27001-2022(1).png" alt="ISO 27001 Certification">
-                        <img src="Assets/iso2.png" alt="ISO 27001 Certification">
                     </div>
                 </div>
             </div>
